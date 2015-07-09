@@ -1,0 +1,12 @@
+#Install ROS Indigo (instructions at http://wiki.ros.org/indigo/Installation/Ubuntu)
+
+#Create ROS workspace
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+catkin_init_workspace
+cd ~/catkin_ws/
+catkin_make
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+#Install capybara nodes (github repository at https://github.com/mauriliodc/capybarauno)

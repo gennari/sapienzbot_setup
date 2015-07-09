@@ -1,0 +1,16 @@
+<launch>
+	
+  <arg name="laser_port" 	 default="/dev/sensors/hokuyo"/> 
+  <arg name="laser_id" 		 default="0"/> 
+  <arg name="scan_topic" 	 default="scan"/> 
+  <arg name="laser_frame_id" default="laser_frame"/> 
+  
+
+   
+  <node pkg="hokuyo_node" type="hokuyo_node" name="laser_$(arg laser_id)">
+    <param name="port" 	value="$(arg laser_port)" />
+    <param name="frame_id" 		value="$(arg laser_frame_id)" />
+    <remap from="scan" 			to="$(arg scan_topic)"/>
+  </node>
+      
+</launch>
