@@ -27,11 +27,10 @@
 
 		<param name="~cmdvel_topic" value="$(arg subscribed_cmdvel_topic)"/>
 		<param name="~subscribed_ticks_topic" value="$(arg subscribed_ticks_topic)"/>
-		<param name="~published_rel_ticks_topic" value="$(arg published_rel_ticks_topic)"/>
-		<param name="~published_abs_ticks_topic" value="$(arg published_abs_ticks_topic)"/>
+		<param name="~published_ticks_topic" value="$(arg published_rel_ticks_topic)"/>
 		<param name="~published_odometry_topic" value="$(arg odom_topic)"/>
    		<param name="~published_link_name" value="$(arg base_frame_id)"/>
-    	<param name="~published_odom_link_name" value="$(arg odom_frame_id)"/>
+    		<param name="~published_odom_link_name" value="$(arg odom_frame_id)"/>
 
 		<param name="~kleft" value="$(arg kleft)"/> 
 		<param name="~kright" value="$(arg kright)"/> 
