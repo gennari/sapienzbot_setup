@@ -1,0 +1,43 @@
+<launch>
+	<arg name="robot_name" default="" />
+	<arg name="serial_port" default="/dev/ttyACM3" />
+
+    	<arg name="subscribed_cmdvel_topic" default="/cmd_vel" />
+	<arg name="subscribed_ticks_topic" default="/requested_ticks" />
+	<arg name="published_rel_ticks_topic" default="/relative_signed_ticks" />
+	<arg name="published_abs_ticks_topic" default="/absolute_usigned_ticks" />
+	<arg name="odom_topic" default="/odom" />
+	<arg name="base_frame_id" default="/base_footprint_frame" />
+	<arg name="odom_frame_id" default="/odom" />
+
+	<!--arg name="kleft" default="0.0058f" />
+	<arg name="kright" default="0.0058f" />
+	<arg name="kbaseline" default="0.305f" /-->
+	<arg name="kleft" default="0.0135f" />
+	<arg name="kright" default="0.0135f" />
+	<arg name="kbaseline" default="0.325f" />
+	
+	<arg name="ascii" default="0" />
+	<arg name="heartbeat" default="1" />
+	<arg name="debug" default="0" />
+
+	<node name="capybarauno_node" pkg="capybarauno" type="capybarauno_solo" output="screen">
+		<!--param name="~robot_name" value="$(arg robot_name)"/-->
+		<param name="~serial_device" value="$(arg serial_port)"/> 
+
+		<param name="~cmdvel_topic" value="$(arg subscribed_cmdvel_topic)"/>
+		<param name="~subscribed_ticks_topic" value="$(arg subscribed_ticks_topic)"/>
+		<param name="~published_ticks_topic" value="$(arg published_rel_ticks_topic)"/>
+		<param name="~published_odometry_topic" value="$(arg odom_topic)"/>
+   		<param name="~published_link_name" value="$(arg base_frame_id)"/>
+    		<param name="~published_odom_link_name" value="$(arg odom_frame_id)"/>
+
+		<param name="~kleft" value="$(arg kleft)"/> 
+		<param name="~kright" value="$(arg kright)"/> 
+		<param name="~kbaseline" value="$(arg kbaseline)"/> 
+		
+		<param name="~debug" value="$(arg debug)"/> 
+		<param name="~heartbeat" value="$(arg heartbeat)"/> 
+		<param name="~ascii" value="$(arg ascii)"/>  
+	</node>
+</launch>
