@@ -22,10 +22,10 @@
 	<arg name="debug" default="0" />
 
 	<node name="capybarauno_node" pkg="capybarauno" type="capybarauno_node" output="screen">
-		<param name="~robot_name" value="$(arg robot_name)"/>
+		<!--param name="~robot_name" value="$(arg robot_name)"/-->
 		<param name="~serial_device" value="$(arg serial_port)"/> 
 
-		<param name="~subscribed_cmdvel_topic" value="$(arg subscribed_cmdvel_topic)"/>
+		<param name="~cmdvel_topic" value="$(arg subscribed_cmdvel_topic)"/>
 		<param name="~subscribed_ticks_topic" value="$(arg subscribed_ticks_topic)"/>
 		<param name="~published_rel_ticks_topic" value="$(arg published_rel_ticks_topic)"/>
 		<param name="~published_abs_ticks_topic" value="$(arg published_abs_ticks_topic)"/>
